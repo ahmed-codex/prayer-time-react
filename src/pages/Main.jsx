@@ -77,7 +77,7 @@ const Main = () => {
         const data = await res.json();
         setPrayerTime(data.data.timings);
         setDate(data.data.date.gregorian.date);
-        setHijri(data.data.date)
+        setHijri(data.data.date);
       } catch (error) {
         console.error("fetch Error");
       }
@@ -123,23 +123,24 @@ const Main = () => {
           </div>
 
           {/* التاريخ */}
-          <div className="flex items-center gap-3 md:gap-4"> 
+          <div className="flex items-center gap-3 md:gap-4">
             {/* التاريخ الميلادي */}
             <div className="w-full md:w-auto text-right">
               <h2 className="font-bold tracking-wide text-lg md:text-xl mb-3 mr-1">
-                  الميلادى
+                الميلادى
               </h2>
               <h2 className="text-md md:text-lg tracking-wide bg-[#e2ac93]/75 px-3 md:px-4 py-2 rounded-lg inline-block">
                 {date}
               </h2>
             </div>
-             {/* التاريخ الهجري */}
+            {/* التاريخ الهجري */}
             <div className="w-full md:w-auto text-right">
               <h2 className="font-bold tracking-wide text-lg md:text-xl mb-3 mr-1">
-                  الهجرى
+                الهجرى
               </h2>
               <h2 className="text-md md:text-lg tracking-wide bg-[#e2ac93]/75 px-3 md:px-4 py-2 rounded-lg inline-block">
-                {hijri?.hijri?.day}-{hijri?.hijri?.month?.ar}-{hijri?.hijri?.year}
+                {hijri?.hijri?.day}-{hijri?.hijri?.month?.ar}-
+                {hijri?.hijri?.year}
               </h2>
             </div>
           </div>
